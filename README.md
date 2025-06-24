@@ -1,5 +1,6 @@
 The goal of this example is to get acquainted with ADCIRC-Subgrid. You will be working with
-The ADCIRC grid is shown in Figure 1, where the information in the grid will be updated after 
+The ADCIRC grid is shown in Figure 1,  which shows the elevation in the color plot and with
+The triangular grids on top of it. The information in the grid will be updated after 
 running the ADCIRC subgrid based on the land use and elevation data. The runs 
 stitch higher resolution information/ lookup tables from two different TIF files.
 
