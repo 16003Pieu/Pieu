@@ -1,5 +1,18 @@
-The goal of this example is to get acquainted with ADCIRC-Subgrid. The runs 
+The goal of this example is to get acquainted with ADCIRC-Subgrid. You will be working with
+The ADCIRC grid is shown in Figure 1, where the information in the grid will be updated after 
+running the ADCIRC subgrid based on the land use and elevation data. The runs 
 stitch higher resolution information/ lookup tables from two different TIF files.
+
+GOALS of this example:
+- download and set-up ADCIRC-Subgrid
+- run the ADCIRC subgrid
+- view the results
+
+<p align="center">
+  <img src="images/subgrid_mesh.png" alt="Screenshot" width="600">
+  <br>
+  <em>Fig 1:The ADCIRC grid used in this example</em>
+</p>
 
 This folder contains 2 raster elevation files and 1 raster landcover file,
 and was created to run the subgrid preprocessor code over multiple datasets.
@@ -33,7 +46,7 @@ There should be 3 TIF files:
 <p align="center">
   <img src="images/landcover.png" alt="Screenshot" width="500">
   <br>
-  <em>Fig 1: 2021 CCAP land use map of Houston, Texas</em>
+  <em>Fig 2: 2021 CCAP land use map of Houston, Texas</em>
 </p>
 
 1. galveston_13_mhw_20072.TIF:
@@ -45,21 +58,23 @@ There should be 3 TIF files:
 <p align="center">
   <img src="images/dem1_2.png" alt="Screenshot" width="800">
   <br>
-  <em>Fig 1:The 1/9th Arc resolution DEM 1 and 2</em>
+  <em>Fig 3:The 1/9th Arc resolution DEM 1 and 2</em>
 </p>
 
 # Step 1: Run Preprocessor Pass 1
 
 Run subgrid preprocessor with `input.yaml` as input. This will use one of the
-dem files, landcover file, and mesh file to build a subgrid lookup table.
+DEM files, landcover file, and mesh file to build a subgrid lookup table.
 
 # Step 2: Run Preprocessor Pass 2
 
 Run subgrid preprocessor with `input_update_existing.yaml`. The updated yaml
 contains an extra optional input line called "existing subgrid" where you
 add the filepath of the existing subgrid. Running the preprocessor code again
-will use the second dem file, landcover file, and mesh file to build and
+will use the second DEM file, landcover file, and mesh file to build and
 updated lookup table with subgrid values for the first and second dem included.
+
+# Step 3: View the Results
 
 ## NOTE
   - The code will not overwrite the existing subgrid data, so use the highest priority datasets first.
