@@ -12,7 +12,7 @@ gunzip fort.14.gz
 ```
 
 Alternatively, you can clone the data from github from from local desktop cmd.
-You have to have github installed in your desktop from the [site for windows] (https://git-scm.com/downloads/win)
+You have to have github installed in your desktop from the [site for windows](https://git-scm.com/downloads/win)
 
 ```bash
 git clone https://github.com/waterinstitute/adcirc-subgrid.git
