@@ -40,12 +40,13 @@ There should be 3 TIF files:
   Digital elevation model (DEM) for one section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
 
 3. galveston_13_mhw_20072.TIF:
-  Digital elevation model for second section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution. 
-![Screenshot](images/dem1_2.png)
-Fig 2: The 1/9th Arc resolution DEM 1 and 2  
+  Digital elevation model for second section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
 
-
-
+<p align="center">
+  <img src="images/dem1_2.png" alt="Screenshot" width="500">
+  <br>
+  <em>Fig 1:The 1/9th Arc resolution DEM 1 and 2</em>
+</p>
 
 # Step 1: Run Preprocessor Pass 1
 
