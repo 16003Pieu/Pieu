@@ -1,5 +1,10 @@
+The goal of this example is to get acquainted with ADCIRC-Subgrid. The runs 
+stitch higher resolution information/ lookup tables from two different TIF files.
+
 This folder contains 2 raster elevation files and 1 raster landcover file,
 and was created to run the subgrid preprocessor code over multiple datasets.
+
+Here is a step-by-step guide to running the example.
 
 # Step 0: Download data from git-lfs
 You will need to download the data from git-lfs before running the code.
@@ -11,20 +16,28 @@ git lfs checkout
 gunzip fort.14.gz
 ```
 
-Alternatively, you can clone the data from github from from local desktop cmd.
-You have to have github installed in your desktop from the [site for windows](https://git-scm.com/downloads/win)
+Alternatively, you can clone the data from GitHub from your local desktop command line.
+You have to have GitHub installed on your desktop from the [site for Windows](https://git-scm.com/downloads/win)
 
 ```bash
 git clone https://github.com/waterinstitute/adcirc-subgrid.git
 ```
-For the first time you would have to input your git user id and password.
+For the first time, you would have to input your git user id and password.
 
-There should be 3 tif files:
-0. 2021_CCAP_J1139301_4326.tif --> Landuse file to be used in both runs
+There should be 3 TIF files:
+0. 2021_CCAP_J1139301_4326.tif 
+  This is a land use map from the 2021 Community Climate Action Plan (CCAP) near Houston, Texas.
+  This file is in Geographic Co-ordinates WGS 1984 (EPSG:4326), which, when projected, would have a cell size of ~30m. 
+  The file will be used in both runs.
 ![Screenshot](images/landcover.png)
-1. galveston_13_mhw_20072.TIF  --> digital elevation model for one section of the region
-2. galveston_13_mhw_20072.TIF  --> digital elevation model for another section of the region
+Fig 1: 2021 CCAP land use map of Houston, Texas
+1. galveston_13_mhw_20072.TIF:
+  Digital elevation model (DEM) for one section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
+
+3. galveston_13_mhw_20072.TIF:
+  Digital elevation model for second section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution. 
 ![Screenshot](images/dem1_2.png)
+Fig 2: The 1/9th Arc resolution DEM 1 and 2  
 
 
 
