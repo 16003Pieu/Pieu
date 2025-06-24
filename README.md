@@ -43,7 +43,7 @@ There should be 3 TIF files:
   Digital elevation model for second section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
 
 <p align="center">
-  <img src="images/dem1_2.png" alt="Screenshot" width="500">
+  <img src="images/dem1_2.png" alt="Screenshot" width="800">
   <br>
   <em>Fig 1:The 1/9th Arc resolution DEM 1 and 2</em>
 </p>
