@@ -30,9 +30,11 @@ There should be 3 TIF files:
   This file is in Geographic Co-ordinates WGS 1984 (EPSG:4326), which, when projected, would have a cell size of ~30m. 
   The file will be used in both runs.
   
-  ![Screenshot](images/landcover.png)
-  
-  *Fig 1: 2021 CCAP land use map of Houston, Texas*
+<p align="center">
+  <img src="images/landcover.png" alt="Screenshot" width="500">
+  <br>
+  <em>Fig 1: 2021 CCAP land use map of Houston, Texas</em>
+</p>
 
 1. galveston_13_mhw_20072.TIF:
   Digital elevation model (DEM) for one section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
