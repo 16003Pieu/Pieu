@@ -1,8 +1,11 @@
-The goal of this example is to get acquainted with ADCIRC-Subgrid. You will be working with
-The ADCIRC grid is shown in Figure 1,  which shows the elevation in the color plot and with
-The triangular grids on top of it. The information in the grid will be updated after 
-running the ADCIRC subgrid based on the land use and elevation data. The runs 
-stitch higher resolution information/ lookup tables from two different TIF files.
+OBJECTIVE:
+The objective of this exercise is to become familiar with the ADCIRC-Subgrid modeling system. 
+You will work with the ADCIRC mesh illustrated in Figure 1, where elevation is represented 
+through a color-coded plot, overlaid with triangular grid elements. Upon executing the 
+ADCIRC-Subgrid model, this grid will use high-resolution elevation and land use data. 
+The simulation  in this example integrates and interpolates detailed information from two
+separate TIF files, enhancing the grid with subgrid-scale resolution 
+and lookup tables derived from the input datasets.
 
 GOALS of this example:
 - download and set-up ADCIRC-Subgrid
@@ -53,7 +56,7 @@ There should be 3 TIF files:
 1. galveston_13_mhw_20072.TIF:
   Digital elevation model (DEM) for one section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
 
-3. galveston_13_mhw_20072.TIF:
+3. galveston_13_mhw_20073.TIF:
   Digital elevation model for second section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
 
 <p align="center">
@@ -64,16 +67,49 @@ There should be 3 TIF files:
 
 # Step 1: Run Preprocessor Pass 1
 
-Run subgrid preprocessor with `input.yaml` as input. This will use one of the
-DEM files, landcover file, and mesh file to build a subgrid lookup table.
+Before this, you should have an adcirc-subgrid Python environment created with
+the required packages. Activate the environment and run the subgrid preprocessor 
+with `input.yaml` as input. This will use one of the DEM files, landcover file, 
+and the mesh file to build a subgrid lookup table. The yaml file should look like 
+this:
+
+```yaml
+input:
+  adcirc_mesh: fort.14
+  manning_lookup: ccap # Either a lookup file or 'ccap' to use the default table
+  dem: galveston_13_mhw_20072.TIF
+  land_cover: 2021_CCAP_J1139301_4326.tif
+
+output:
+  filename: subgrid.nc
+  progress_bar_increment: 5
+
+options:
+  # Control for the number of subgrid levels for calculation and output
+  n_subgrid_levels: 50 # Controls the number of levels the calculation is performed on
+  n_phi_levels: 50 # Controls the number of phi levels between 0 and 1 where output is written
+
+  # Control for the way the subgrid water levels are distributed
+  subgrid_level_distribution: histogram # Either 'histogram' or 'linear'
+```
+
+The following command will run the subgrid using the data provided in the yaml file:
+```bash
+adcirc-subgrid prep input.yaml
+```
+
 
 # Step 2: Run Preprocessor Pass 2
 
 Run subgrid preprocessor with `input_update_existing.yaml`. The updated yaml
 contains an extra optional input line called "existing subgrid" where you
-add the filepath of the existing subgrid. Running the preprocessor code again
-will use the second DEM file, landcover file, and mesh file to build and
-updated lookup table with subgrid values for the first and second dem included.
+add the filepath of the existing subgrid. The `input_update_existing.yaml` 
+now uses the second DEM and as the name suggests, it updates the existing 
+information from Step 1 with the new information from the second DEM. 
+
+So, running the preprocessor code again will use the second DEM file, but the 
+same landcover file and mesh file to build and update the lookup table with 
+subgrid values for the first and second DEMs included.
 
 # Step 3: View the Results
 
