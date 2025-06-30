@@ -93,7 +93,7 @@ options:
   subgrid_level_distribution: histogram # Either 'histogram' or 'linear'
 ```
 
-The following command will run the subgrid using the data provided in the yaml file:
+To run adcirc subgrid in step 1, use the following code:
 ```bash
 adcirc-subgrid prep input.yaml
 ```
@@ -110,6 +110,11 @@ information from Step 1 with the new information from the second DEM.
 So, running the preprocessor code again will use the second DEM file, but the 
 same landcover file and mesh file to build and update the lookup table with 
 subgrid values for the first and second DEMs included.
+
+To run adcirc subgrid in step 2, use the following code:
+```bash
+adcirc-subgrid prep input_update_existing.yaml
+```
 
 # Step 3: View the Results
 
