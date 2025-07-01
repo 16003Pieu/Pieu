@@ -63,6 +63,11 @@ There should be 3 TIF files:
 Both these files are labeld and shown in _Figure 3_.
 
 <p align="center">
+  <img src="images/lu_demsV2.png" width="30%" alt="extentt"/>
+  <img src="images/dem1_2.png" width="70%" alt="DEMs"/>
+</p>
+
+<p align="center">
   <img src="images/dem1_2.png" alt="Screenshot" width="800">
   <br>
   <em>Fig 3:The 1/9th Arc resolution DEM 1 and 2</em>
