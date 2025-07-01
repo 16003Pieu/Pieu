@@ -1,4 +1,5 @@
 OBJECTIVE:
+
 The objective of this exercise is to become familiar with the ADCIRC-Subgrid modeling system. 
 You will work with the ADCIRC mesh illustrated in Figure 1, where elevation is represented 
 through a color-coded plot, overlaid with triangular grid elements. Upon executing the 
@@ -97,7 +98,8 @@ To run adcirc subgrid in step 1, use the following code:
 ```bash
 adcirc-subgrid prep input.yaml
 ```
-
+After completion of Step 1, it should generate the subgrid.nc in the same folder the data
+is in. 
 
 # Step 2: Run Preprocessor Pass 2
 
@@ -115,8 +117,26 @@ To run adcirc subgrid in step 2, use the following code:
 ```bash
 adcirc-subgrid prep input_update_existing.yaml
 ```
+After completion of Step 2, the results should be stored in the netCDF file
+"subgrid_updated.nc" as specified in the yaml file.
 
 # Step 3: View the Results
+
+The results from the netCDF file from Steps 1 and 2 can be viewed using the 
+provided codes in the source folder (../src/AdcircSubgrid).  
+
+The command to view the percent wet at each element from Step 1, can be viewed
+ using the following command:
+
+```bash
+import sys
+sys.path.append(<path to src/AdcircSubgrid>)
+import mesh_plot
+
+mesh_plot.plot_mesh('subgrid.nc','percent_wet', 2 , True, 'after_percent_wet2')
+```
+
+
 
 ## NOTE
   - The code will not overwrite the existing subgrid data, so use the highest priority datasets first.
