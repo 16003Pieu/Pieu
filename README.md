@@ -60,7 +60,7 @@ There should be 3 TIF files:
 
 3. galveston_13_mhw_20073.TIF:
   Digital elevation model for second section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
-Both these files are labeld and shown in _figure 3_.
+Both these files are labeld and shown in _Figure 3_.
 
 <p align="center">
   <img src="images/dem1_2.png" alt="Screenshot" width="800">
