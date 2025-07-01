@@ -127,7 +127,6 @@ provided codes in the source folder (../src/AdcircSubgrid).
 
 The command to view the percent wet at each element from Step 1, can be viewed
  using the following command:
-
 ```bash
 import sys
 sys.path.append(<path to src/AdcircSubgrid>)
@@ -135,8 +134,29 @@ import mesh_plot
 
 mesh_plot.plot_mesh('subgrid.nc','percent_wet', 2 , True, 'after_percent_wet2')
 ```
+After running the code, it should generate the percentage wet or the wet fraction 
+at each element of the ADCIRC mesh as shown in Fig 4. The subgrid code recalculates
+what fraction of an element is wet, for each element in the mesh, based on the 
+DEM (in this case DEM 1) specified in the yaml file, i.e. used in Step 1. There are 
+other parameters recalculated and you are encouraged to explore.
 
+<p align="center">
+  <img src="images/before_percent_wet2.png" alt="Screenshot" width="600">
+  <br>
+  <em>Fig 4: The percentage wet or the wet fraction at each element of the mesh
+  corresponding to the first DEM after Step 1.</em>
+</p>
 
+Fig 5 shows the results after Step 2, the wet fraction at each element. This step only 
+recalculates the wet fraction of an element using data from DEM 2 and appends the results 
+Step 1. So the Fig 5 has the complete data from both the DEMs.
+
+<p align="center">
+  <img src="images/after_percent_wet2.png" alt="Screenshot" width="600">
+  <br>
+  <em>Fig 5: The percentage wet or the wet fraction at each element of the mesh
+  corresponding to the first and second DEM after Step 2.</em>
+</p>
 
 ## NOTE
   - The code will not overwrite the existing subgrid data, so use the highest priority datasets first.
