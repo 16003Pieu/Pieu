@@ -1,7 +1,7 @@
 OBJECTIVE:
 
 The objective of this exercise is to become familiar with the ADCIRC-Subgrid modeling system. 
-You will work with the ADCIRC mesh illustrated in Figure 1, where elevation is represented 
+You will work with the ADCIRC mesh illustrated in _Figure 1_, where elevation is represented 
 through a color-coded plot, overlaid with triangular grid elements. Upon executing the 
 ADCIRC-Subgrid model, this grid will use high-resolution elevation and land use data. 
 The simulation  in this example integrates and interpolates detailed information from two
@@ -43,10 +43,11 @@ git clone https://github.com/waterinstitute/adcirc-subgrid.git
 For the first time, you would have to input your git user id and password.
 
 There should be 3 TIF files:
+
 0. 2021_CCAP_J1139301_4326.tif 
   This is a land use map from the 2021 Community Climate Action Plan (CCAP) near Houston, Texas.
   This file is in Geographic Co-ordinates WGS 1984 (EPSG:4326), which, when projected, would have a cell size of ~30m. 
-  The file will be used in both runs.
+  The file, shown in _Figure 2_ will be used in both runs.
   
 <p align="center">
   <img src="images/landcover.png" alt="Screenshot" width="500">
@@ -59,6 +60,7 @@ There should be 3 TIF files:
 
 3. galveston_13_mhw_20073.TIF:
   Digital elevation model for second section of the Houston, Texas region. It's also in WGS 1984 with 1/9th Arc resolution.
+Both these files are labeld and shown in _figure 3_.
 
 <p align="center">
   <img src="images/dem1_2.png" alt="Screenshot" width="800">
@@ -135,7 +137,7 @@ import mesh_plot
 mesh_plot.plot_mesh('subgrid.nc','percent_wet', 2 , True, 'after_percent_wet2')
 ```
 After running the code, it should generate the percentage wet or the wet fraction 
-at each element of the ADCIRC mesh as shown in Fig 4. The subgrid code recalculates
+at each element of the ADCIRC mesh as shown in _Figure 4_. The subgrid code recalculates
 what fraction of an element is wet, for each element in the mesh, based on the 
 DEM (in this case DEM 1) specified in the yaml file, i.e. used in Step 1. There are 
 other parameters recalculated and you are encouraged to explore.
@@ -149,7 +151,7 @@ other parameters recalculated and you are encouraged to explore.
 
 Fig 5 shows the results after Step 2, the wet fraction at each element. This step only 
 recalculates the wet fraction of an element using data from DEM 2 and appends the results 
-Step 1. So the Fig 5 has the complete data from both the DEMs.
+Step 1. So the _Figure 5_ has the complete data from both the DEMs.
 
 <p align="center">
   <img src="images/after_percent_wet2.png" alt="Screenshot" width="600">
