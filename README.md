@@ -1,8 +1,8 @@
 OBJECTIVE:
 
 The objective of this exercise is to become familiar with the ADCIRC-Subgrid modeling system. 
-You will work with the ADCIRC mesh illustrated in _Figure 1_, where elevation is represented 
-through a color-coded plot, overlaid with triangular grid elements. Upon executing the 
+You will work with the ADCIRC mesh or grid, illustrated in _Figure 1_, where elevation is represented 
+through a color-coded bar, overlaid with triangular grid elements. Upon executing the 
 ADCIRC-Subgrid model, this grid will use high-resolution elevation and land use data. 
 The simulation  in this example integrates and interpolates detailed information from two
 separate TIF files, enhancing the grid with subgrid-scale resolution 
@@ -24,8 +24,17 @@ and was created to run the subgrid preprocessor code over multiple datasets.
 
 Here is a step-by-step guide to running the example.
 
-# Step 0: Download data from git-lfs
-You will need to download the data from git-lfs before running the code.
+# Step 0: Download data from git
+
+You can clone the data from GitHub from your local desktop command line.
+You have to have GitHub installed on your desktop from the [site for Windows](https://git-scm.com/downloads/win)
+
+```bash
+git clone https://github.com/waterinstitute/adcirc-subgrid.git
+```
+For the first time, you would have to input your git user id and password.
+
+Alternatively, you can also download the data, as specifically needed, from git-lfs before running the code.
 
 ```commandline
 git lfs fetch
@@ -34,19 +43,13 @@ git lfs checkout
 gunzip fort.14.gz
 ```
 
-Alternatively, you can clone the data from GitHub from your local desktop command line.
-You have to have GitHub installed on your desktop from the [site for Windows](https://git-scm.com/downloads/win)
-
-```bash
-git clone https://github.com/waterinstitute/adcirc-subgrid.git
-```
-For the first time, you would have to input your git user id and password.
+Alternatively, 
 
 There should be 3 TIF files:
 
 0. 2021_CCAP_J1139301_4326.tif 
-  This is a land use map from the 2021 Community Climate Action Plan (CCAP) near Houston, Texas.
-  This file is in Geographic Co-ordinates WGS 1984 (EPSG:4326), which, when projected, would have a cell size of ~30m. 
+  This is a land use map from the 2021 Coastal Change Analysis Program [C-CAP](https://coast.noaa.gov/digitalcoast/data/ccaphighres.html)
+  near Houston, Texas. This file is in Geographic Co-ordinates WGS 1984 (EPSG:4326), which, when projected, would have a cell size of ~30m. 
   The file, shown in _Figure 2_ will be used in both runs.
   
 <p align="center">
@@ -63,8 +66,8 @@ There should be 3 TIF files:
 Both these files are labeld and shown in _Figure 3_.
 
 <p align="center">
-  <img src="images/lu_demsV2.png" width="30%" alt="extentt"/>
-  <img src="images/dem1_2.png" width="70%" alt="DEMs"/>
+  <img src="images/lu_demsV2.png" width="45%" alt="extentt" style="display:inline-block; margin-right:10px;" />
+  <img src="images/dem1_2.png" width="45%" alt="DEMs" style="display:inline-block;" />
 </p>
 
 <p align="center">
