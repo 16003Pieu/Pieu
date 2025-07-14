@@ -68,14 +68,10 @@ Both these files are labeld and shown in _Figure 3_.
   <img src="images/lu_demsV2.png" width="30%" alt="extentt" style="display:inline-block; margin-right:10px;" />
   <img src="images/dem1_2.png" width="65%" alt="DEMs" style="display:inline-block;" />
   <br>
-  <em>Fig 3:The 1/9th Arc resolution DEM 1 and 2</em>
+  <em>Fig 3: The figure to the left shows the DEM location within the land use map. The figure to the right shows
+    the 1/9th Arc resolution DEM 1 and 2</em>
 </p>
 
-<p align="center">
-  <img src="images/dem1_2.png" alt="Screenshot" width="800">
-  <br>
-  <em>Fig 3:The 1/9th Arc resolution DEM 1 and 2</em>
-</p>
 
 # Step 1: Run Preprocessor Pass 1
 
