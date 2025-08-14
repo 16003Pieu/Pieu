@@ -1,12 +1,11 @@
 OBJECTIVE:
 
 The objective of this exercise is to become familiar with the ADCIRC-Subgrid modeling system. 
-You will work with the ADCIRC mesh or grid, illustrated in _Figure 1_, where elevation is represented 
-through a color-coded bar, overlaid with triangular grid elements. Upon executing the 
-ADCIRC-Subgrid model, this grid will use high-resolution elevation and land use data. 
-The simulation  in this example integrates and interpolates detailed information from two
-separate TIF files, enhancing the grid with subgrid-scale resolution 
-and lookup tables derived from the input datasets.
+You will work with the ADCIRC mesh or grid, illustrated in _Figure 1_, where elevation is represented
+through a color-coded bar, overlaid with triangular grid elements. Upon executing the ADCIRC-Subgrid 
+model, this grid will use high-resolution elevation and land use data. The simulation  in this example 
+integrates and interpolates detailed information from two separate TIF files, enhancing the grid with 
+subgrid-scale resolution and lookup tables derived from the input datasets.
 
 GOALS of this example:
 - download and set-up ADCIRC-Subgrid
@@ -48,7 +47,7 @@ There should be 3 TIF files:
 
 0. 2021_CCAP_J1139301_4326.tif 
   This is a land use map from the 2021 Coastal Change Analysis Program [C-CAP](https://coast.noaa.gov/digitalcoast/data/ccaphighres.html)
-  near Houston, Texas. This file is in Geographic Co-ordinates WGS 1984 (EPSG:4326), which, when projected, would have a cell size of ~30m. 
+near Houston, Texas. This file is in Geographic Co-ordinates WGS 1984 (EPSG:4326), which, when projected, would have a cell size of ~30m. 
   The file, shown in _Figure 2_ will be used in both runs.
   
 <p align="center">
@@ -75,10 +74,7 @@ Both these files are labeld and shown in _Figure 3_.
 
 # Step 1: Run Preprocessor Pass 1
 
-Before this, you should have an adcirc-subgrid Python environment created with
-the required packages. Activate the environment and run the subgrid preprocessor 
-with `input.yaml` as input. This will use one of the DEM files, landcover file, 
-and the mesh file to build a subgrid lookup table. The yaml file should look like 
+Before this, you should have an adcirc-subgrid Python environment created with the required packages. Activate the environment and run the subgrid preprocessor with `input.yaml` as input. This will use one of the DEM files, landcover file, and the mesh file to build a subgrid lookup table. The yaml file should look like 
 this:
 
 ```yaml
